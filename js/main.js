@@ -30,6 +30,8 @@ function agregar_producto_carrito(e){
         cantidad: 1
     }
 
+    alerta_agregar()
+
     // Llamado a la función agregar carrito con el producto
     agregarAlCarrito(nuevo_producto);
 }
@@ -110,6 +112,7 @@ function eliminar_producto_carrito(e){
     }
     tr.remove();
     sumatoria_carrito();
+    alerta_eliminar()
 }
 
 
@@ -141,3 +144,48 @@ window.onload = function(){
         optimizar_carrito();
     }
 }
+
+
+// Alerta de agregar al carrito
+
+function alerta_agregar(){
+    Swal.fire({
+        title: "Producto añadido al carrito exitosamente",
+        width: "100%",
+        timer: 2000,
+        timerProgressBar: true,
+        position: "top",
+        showConfirmButton: false,
+        color: "#000000",
+    })
+}
+
+// Alerta 
+function alerta_compra(){
+    Swal.fire({
+        icon: "success",
+        title: "¡Muchas gracias por realizar su compra!",
+        width: "50%",
+        timer: 2000,
+        timerProgressBar: true,
+        position: "center",
+        color: "#000000",
+    })
+}
+
+let boton_compra = document.getElementById("boton-comprar")
+
+
+boton_compra.addEventListener("click", alerta_compra)
+
+function alerta_eliminar(){
+    Swal.fire({
+        icon: "error",
+        title: "¡Producto eliminado del carrito!",
+        width: "50%",
+        position: "center",
+        color: "#000000",
+        confirmButtonColor: "#001032"
+    })
+}
+
