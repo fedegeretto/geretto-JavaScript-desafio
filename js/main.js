@@ -237,7 +237,7 @@ fetch(url)
                 icono.src="../img/animaciones/snowy-6.svg"
                 break;                        
             case "Clear":
-                icono.src="../img/animaciones/day.svg"
+                icono.src="img/animaciones/day.svg"
                 break;
             case "Atmosphere":
                 icono.src="../img/animaciones/weather.svg"
@@ -266,7 +266,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 let iconMarker = L.icon({
-    iconUrl: '../img/marker.png',
+    iconUrl: 'img/marker.png',
     iconSize: [60, 60],
     iconAnchor: [30, 60]
 })
