@@ -266,7 +266,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 let iconMarker = L.icon({
-    iconUrl: '../img/animaciones/marcador.png',
+    iconUrl: '/img/marcador.png',
     iconSize: [60, 60],
     iconAnchor: [30, 60]
 })
