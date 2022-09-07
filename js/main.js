@@ -225,28 +225,28 @@ fetch(url)
         console.log(data.weather[0].main);
         switch (data.weather[0].main) {
             case "Thunderstorm":
-                icono.src="../img/animaciones/thunder.svg"
+                icono.src="img/animaciones/thunder.svg"
                 break;
             case "Drizzle":
-                icono.src="../img/animaciones/rainy-2.svg"
+                icono.src="img/animaciones/rainy-2.svg"
                 break;
             case "Rain":
-                icono.src="../img/animaciones/rainy-7.svg"
+                icono.src="img/animaciones/rainy-7.svg"
                 break;
             case "Snow":
-                icono.src="../img/animaciones/snowy-6.svg"
+                icono.src="img/animaciones/snowy-6.svg"
                 break;                        
             case "Clear":
                 icono.src="img/animaciones/day.svg"
                 break;
             case "Atmosphere":
-                icono.src="../img/animaciones/weather.svg"
+                icono.src="img/animaciones/weather.svg"
                 break;  
             case "Clouds":
-                icono.src="../img/animaciones/cloudy-day-1.svg"
+                icono.src="img/animaciones/cloudy-day-1.svg"
                 break;  
             default:
-                icono.src="../img/animaciones/cloudy-day-1.svg"
+                icono.src="img/animaciones/cloudy-day-1.svg"
         }
 
     } )
@@ -266,7 +266,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 let iconMarker = L.icon({
-    iconUrl: '../img/marker.png',
+    iconUrl: '../img/animaciones/marcador.png',
     iconSize: [60, 60],
     iconAnchor: [30, 60]
 })
