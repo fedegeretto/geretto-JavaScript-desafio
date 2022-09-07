@@ -189,3 +189,86 @@ function alerta_eliminar(){
     })
 }
 
+
+// Entrega de Fetch() y API
+
+
+let temperatura_valor = document.getElementById("temperatura-valor");
+let temperatura_descripcion_corta = document.getElementById("temperatura-descripcion-corta");
+let ciudad = document.getElementById("ciudad");
+let icono = document.getElementById("icono");
+let viento_velocidad = document.getElementById("viento-velocidad");
+
+const url = "https://api.openweathermap.org/data/2.5/weather?q=Rio%20Cuarto&lang=es&units=metric&appid=6c0d3feb4e345e0f7d513c4a3e82e61f"
+
+console.log(url);
+
+fetch(url)
+    .then( (resp) => resp.json() )
+    .then( (data) => {
+        console.log(data.main.temp);
+        let temperatura = data.main.temp;
+        temperatura_valor.textContent = `${temperatura} °C`
+
+        console.log(data.weather[0].description);
+        let descripcion = data.weather[0].description;
+        temperatura_descripcion_corta.textContent = descripcion.toUpperCase()
+
+        console.log(data.name);
+        ciudad.textContent = data.name;
+
+        // console.log(data.wind.speed);
+        velocidad = data.wind.speed * 3.6
+        console.log(velocidad.toFixed(2));
+        viento_velocidad.textContent = `${velocidad.toFixed(2)} km/h`
+
+        console.log(data.weather[0].main);
+        switch (data.weather[0].main) {
+            case "Thunderstorm":
+                icono.src="../img/animaciones/thunder.svg"
+                break;
+            case "Drizzle":
+                icono.src="../img/animaciones/rainy-2.svg"
+                break;
+            case "Rain":
+                icono.src="../img/animaciones/rainy-7.svg"
+                break;
+            case "Snow":
+                icono.src="../img/animaciones/snowy-6.svg"
+                break;                        
+            case "Clear":
+                icono.src="../img/animaciones/day.svg"
+                break;
+            case "Atmosphere":
+                icono.src="../img/animaciones/weather.svg"
+                break;  
+            case "Clouds":
+                icono.src="../img/animaciones/cloudy-day-1.svg"
+                break;  
+            default:
+                icono.src="../img/animaciones/cloudy-day-1.svg"
+        }
+
+    } )
+    .catch( error => {
+        console.log(error);
+    } )
+
+
+// ---------------------------- //
+
+let map = L.map('map').setView([-33.1253981, -64.34792759999999], 15);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+
+let iconMarker = L.icon({
+    iconUrl: '../img/marker.png',
+    iconSize: [60, 60],
+    iconAnchor: [30, 60]
+})
+
+let marker = L.marker([-33.1253981, -64.34792759999999], { icon: iconMarker }).addTo(map)

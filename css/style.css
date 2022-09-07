@@ -1,3 +1,12 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
 body{
     background-color: rgb(236, 236, 236);
 }
@@ -42,4 +51,71 @@ header{
     font-weight: 700;
     margin-right: 30px;
     margin: 20px;
+}
+
+#contenedor-padre{
+    background: #667db6;
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); 
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); 
+}
+
+#titulo-clima{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 25px;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 35px;
+
+}
+
+#contenedor{
+
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}
+
+#icono{
+    height: 200px;
+    width: 200px;
+}
+
+#caja-uno, #caja-dos, #caja-tres{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    padding: 20px;
+}
+
+#caja-uno{
+    background-color: rgba(0, 0, 0, 0.774)
+}
+
+#caja-dos{
+    background-color: rgba(128, 0, 111, 0.774);
+    display: flex;
+}
+
+#caja-tres{
+    background-color: rgba(17, 0, 255, 0.774);
+}
+
+#caja-map{
+    height: 180px;
+}
+
+#map{
+    height: 400px; 
+    width: 70%;
+    z-index: 1;
+    margin: 0px auto;
+    margin-bottom: 50px;
 }
