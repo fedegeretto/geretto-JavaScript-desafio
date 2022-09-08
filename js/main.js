@@ -62,7 +62,7 @@ function optimizar_carrito(){
         const tr = document.createElement("tr");
         tr.classList.add("productoCarrito");
         const Contenido = 
-        `<th scope="row">1</th>
+        `
             <td class="table__productos">
                 <img src=${producto.img} alt="">
                 <h6 class="title">${producto.title}</h6>
@@ -177,6 +177,13 @@ let boton_compra = document.getElementById("boton-comprar")
 
 
 boton_compra.addEventListener("click", alerta_compra)
+boton_compra.addEventListener("click", borrar_carrito)
+
+function borrar_carrito(){
+    tbody.innerHTML = "";
+    carrito = [];
+    sumatoria_carrito()
+}
 
 function alerta_eliminar(){
     Swal.fire({
@@ -272,3 +279,7 @@ let iconMarker = L.icon({
 })
 
 let marker = L.marker([-33.1253981, -64.34792759999999], { icon: iconMarker }).addTo(map)
+
+
+// OPTIMIZAR LA PARTE DEL TOTAL Y BOTÓN COMPRAR CON EL FOOTER (SEPARARLOS)
+// CENTRAR LAS COSAS DEL CARRITO
